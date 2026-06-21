@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ESI Ventures LLC | Strategic Investment</title>
+    
+    <link rel="icon" type="image/png" href="imagenes/isotipo-transp.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #020617; color: white; overflow-x: hidden; }
+        h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
+        .lang-hidden { display: none !important; }
+        section { scroll-margin-top: 100px; }
+        
+        .nav-light { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .nav-link-dark { color: #0f172a; transition: color 0.3s ease; }
+        .nav-link-dark:hover { color: #d4af37; }
+        .lang-switcher-dark { border-color: rgba(0, 0, 0, 0.1); color: #0f172a; }
+
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.9)), url('imagenes/hero2.jpeg');
+            background-size: cover; background-position: center; z-index: 0;
+        }
+
+        /* --- AJUSTE DE TAMAÑO DE TÍTULOS DORADOS --- */
+        .section-title { 
+            font-size: 1.1rem; /* Aumentado de 0.7rem a 1.1rem */
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5em; 
+            color: #d4af37; 
+            margin-bottom: 2rem; 
+            display: block; 
+        }
+
+        .btn-gold {
+            background-color: #d4af37; color: #020617; padding: 16px 40px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em;
+            transition: all 0.3s ease; border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; min-width: 240px; cursor: pointer;
+        }
+        .btn-gold:hover { background-color: #e5c158; transform: translateY(-2px); }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3); color: white; padding: 16px 40px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em;
+            transition: all 0.3s ease; border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; min-width: 240px;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: white; transform: translateY(-2px); }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; height: 100%;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { transform: translateY(-10px); border-color: rgba(212, 175, 55, 0.4); }
+        
+        .logo-container img { transition: transform 0.5s ease; }
+        .glass-card:hover .logo-container img { transform: scale(1.1); }
+
+        /* Estilos Legales Íntegros */
+        .legal-body h4 { color: #d4af37; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2rem; margin-bottom: 0.8rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: inline-block; }
+        .legal-body p { color: #cbd5e1; margin-bottom: 1.4rem; line-height: 1.8; font-size: 0.95rem; }
+        .footer-logo-blend { mix-blend-mode: multiply; filter: contrast(1.1); }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 nav-light py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#"><img src="imagenes/isotipo-transp.png" alt="ESI Ventures" class="h-10 md:h-12"></a>
+            <div class="hidden md:flex gap-8 text-[11px] tracking-[0.2em] uppercase font-bold">
+                <a href="#about" class="nav-link-dark" data-lang="en">About</a>
+                <a href="#about" class="nav-link-dark lang-hidden" data-lang="es">Nosotros</a>
+                <a href="#philosophy" class="nav-link-dark" data-lang="en">Philosophy</a>
+                <a href="#philosophy" class="nav-link-dark lang-hidden" data-lang="es">Filosofía</a>
+                <a href="#ventures" class="nav-link-dark" data-lang="en">Ventures</a>
+                <a href="#ventures" class="nav-link-dark lang-hidden" data-lang="es">Empresas</a>
+                <a href="#contact" class="nav-link-dark" data-lang="en">Contact</a>
+                <a href="#contact" class="nav-link-dark lang-hidden" data-lang="es">Contacto</a>
+            </div>
+            <div class="flex gap-4 text-[10px] font-bold border lang-switcher-dark rounded-full px-4 py-2">
+                <button onclick="setLanguage('en')" id="btn-en">EN</button>
+                <span class="opacity-20">|</span>
+                <button onclick="setLanguage('es')" id="btn-es">ES</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center text-center px-6">
+        <div class="hero-bg"></div>
+        <div class="relative z-10 max-w-5xl" data-aos="fade-up" data-aos-duration="1500">
+            <span class="section-title">Florida • Bolivia</span>
+            <div data-lang="en">
+                <h1 class="text-6xl md:text-8xl serif mb-6">Strategic Ventures for Generational Impact</h1>
+                <p class="text-lg text-slate-300 italic max-w-2xl mx-auto mb-10">ESI Ventures develops high-potential business opportunities through disciplined planning and execution.</p>
+                <div class="flex flex-col md:flex-row gap-5 justify-center">
+                    <a href="#ventures" class="btn-gold">Explore Ventures</a>
+                    <a href="#contact" class="btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div data-lang="es" class="lang-hidden">
+                <h1 class="text-6xl md:text-8xl serif mb-6">Empresas Estratégicas para un Impacto Generacional</h1>
+                <p class="text-lg text-slate-300 italic max-w-2xl mx-auto mb-10">ESI Ventures desarrolla oportunidades de negocio de alto potencial mediante una planificación y ejecución disciplinadas.</p>
+                <div class="flex flex-col md:flex-row gap-5 justify-center">
+                    <a href="#ventures" class="btn-gold">Explorar Empresas</a>
+                    <a href="#contact" class="btn-outline">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6 bg-slate-900/20">
+        <div class="max-w-4xl mx-auto text-center space-y-24">
+            <div data-aos="fade-right">
+                <span class="section-title" data-lang="en">Our Mission</span>
+                <span class="section-title lang-hidden" data-lang="es">Nuestra Misión</span>
+                <p class="text-slate-400 text-2xl italic leading-relaxed" data-lang="en">"ESI Ventures develops high-potential business opportunities through disciplined planning and execution, high standards of excellence, and responsible stewardship—serving our family, employees, partners, and customers with integrity."</p>
+                <p class="text-slate-400 text-2xl italic leading-relaxed lang-hidden" data-lang="es">"ESI Ventures desarrolla oportunidades de negocio de alto potencial mediante una planificación y ejecución disciplinadas, altos estándares de excelencia y una administración responsable, sirviendo a nuestra familia, empleados, socios y clientes con integridad."</p>
+            </div>
+            <div data-aos="fade-left">
+                <span class="section-title" data-lang="en">Our Vision</span>
+                <span class="section-title lang-hidden" data-lang="es">Nuestra Visión</span>
+                <p class="text-slate-400 text-2xl italic leading-relaxed" data-lang="en">"To honor God by building a portfolio of ethical business ventures that create lasting impact, elevate people, and strengthen communities."</p>
+                <p class="text-slate-400 text-2xl italic leading-relaxed lang-hidden" data-lang="es">"Honrar a Dios mediante la construcción de un portafolio de emprendimientos éticos que generen un impacto duradero, eleven a las personas y fortalezcan a las comunidades."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="py-32 px-6 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="section-title" data-lang="en">Our Philosophy</span>
+            <span class="section-title lang-hidden" data-lang="es">Nuestra Filosofía</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mt-16">
+                <div data-aos="fade-up">
+                    <h3 class="text-[#d4af37] tracking-[0.4em] uppercase font-bold text-xl mb-6">Excellence</h3>
+                    <p class="text-slate-300 text-base italic" data-lang="en">Superior standards in every detail of our operations.</p>
+                    <p class="text-slate-300 text-base italic lang-hidden" data-lang="es">Estándares superiores en cada detalle de nuestras operaciones.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-[#d4af37] tracking-[0.4em] uppercase font-bold text-xl mb-6">Stewardship</h3>
+                    <p class="text-slate-300 text-base italic" data-lang="en">Responsible management of capital and resources.</p>
+                    <p class="text-slate-300 text-base italic lang-hidden" data-lang="es">Gestión responsable del capital y los recursos.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-[#d4af37] tracking-[0.4em] uppercase font-bold text-xl mb-6">Integrity</h3>
+                    <p class="text-slate-300 text-base italic" data-lang="en">Trust through absolute transparency and ethics.</p>
+                    <p class="text-slate-300 text-base italic lang-hidden" data-lang="es">Confianza a través de la transparencia y ética absoluta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ventures" class="py-32 px-6 bg-slate-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-title" data-lang="en">Portfolio</span>
+                <span class="section-title lang-hidden" data-lang="es">Portafolio</span>
+                <h2 class="text-5xl md:text-6xl serif">Active Ventures</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 items-center text-center" data-aos="fade-up">
+                    <div class="logo-container bg-white p-4 rounded h-28 w-full flex items-center justify-center mb-8">
+                        <img src="imagenes/apluslogo.jpg" alt="A+ Languages" class="max-h-full">
+                    </div>
+                    <h3 class="text-2xl serif mb-4">APlusLanguages</h3>
+                    <p class="text-slate-400 text-sm mb-6">Global language education services.</p>
+                    <div class="mt-auto"><a href="https://apluslanguages.net" target="_blank" class="text-[#d4af37] text-[11px] font-bold tracking-widest uppercase hover:underline">Visit Site →</a></div>
+                </div>
+                <div class="glass-card p-10 items-center text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo-container bg-white p-4 rounded h-28 w-full flex items-center justify-center mb-8">
+                        <img src="imagenes/3mportfolio.jpg" alt="3M Portfolio" class="max-h-full">
+                    </div>
+                    <h3 class="text-2xl serif mb-4">3M Multi-Asset Portfolio</h3>
+                    <p class="text-slate-400 text-sm mb-6">Strategic management of equity and digital assets.</p>
+                </div>
+                <div class="glass-card p-10 items-center text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="logo-container bg-white p-4 rounded h-28 w-full flex items-center justify-center mb-8">
+                        <img src="imagenes/discovernowbolivia.jpg" alt="DiscoverNow" class="max-h-full">
+                    </div>
+                    <h3 class="text-2xl serif mb-4">DiscoverNowBolivia</h3>
+                    <p class="text-slate-400 text-sm mb-6">Identifying high-impact opportunities in Bolivia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6 bg-slate-950">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div data-aos="fade-right">
+                <span class="section-title">Contact</span>
+                <h2 class="text-6xl serif mb-10">Integrity in every partnership.</h2>
+                <div class="bg-white p-10 rounded shadow-2xl inline-block">
+                    <img src="imagenes/Logo_hor-transp.png" alt="ESI" class="max-w-sm">
+                </div>
+            </div>
+            <div class="glass-card p-10" data-aos="fade-left">
+                <form action="https://formspree.io/f/mgodjara" method="POST" class="flex flex-col gap-6">
+                    <input type="text" name="name" placeholder="Name / Nombre" required class="bg-white/5 border border-white/10 p-5 rounded text-white outline-none focus:border-[#d4af37]">
+                    <input type="email" name="email" placeholder="Email" required class="bg-white/5 border border-white/10 p-5 rounded text-white outline-none focus:border-[#d4af37]">
+                    <textarea rows="5" name="message" placeholder="Message / Mensaje" required class="bg-white/5 border border-white/10 p-5 rounded text-white outline-none focus:border-[#d4af37]"></textarea>
+                    <button type="submit" class="btn-gold w-full cursor-pointer">Send Message / Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#f8f8f6] border-t border-[#d4af37]/20 pt-20 pb-10 text-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 pb-16">
+                <div>
+                    <img src="imagenes/logo_vert.jpg" alt="ESI Ventures" class="w-48 mb-6 footer-logo-blend">
+                    <p class="italic text-slate-500 text-[12px]">Strategic Ventures for Generational Impact.</p>
+                </div>
+                <div>
+                    <span class="block text-[#d4af37] uppercase tracking-widest text-[12px] font-bold mb-8">Navigation</span>
+                    <div class="flex flex-col gap-5 text-[12px] uppercase tracking-widest font-semibold">
+                        <a href="#about" class="hover:text-[#d4af37]">About</a>
+                        <a href="#philosophy" class="hover:text-[#d4af37]">Philosophy</a>
+                        <a href="#ventures" class="hover:text-[#d4af37]">Ventures</a>
+                        <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <span class="block text-[#d4af37] uppercase tracking-widest text-[12px] font-bold mb-8">Location</span>
+                    <p class="text-[12px] text-slate-600">Florida, USA | La Paz, Bolivia</p>
+                    <p class="text-[12px] font-bold mt-3">esi.ventures.llc@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-slate-400 uppercase tracking-widest">
+                <p>© 2026 ESI Ventures LLC. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="javascript:void(0)" onclick="openLegal('privacy')" class="hover:text-[#d4af37]">Privacy Policy</a>
+                    <a href="javascript:void(0)" onclick="openLegal('terms')" class="hover:text-[#d4af37]">Terms</a>
+                    <a href="javascript:void(0)" onclick="openLegal('cookies')" class="hover:text-[#d4af37]">Cookies</a>
+                    <a href="javascript:void(0)" onclick="openLegal('disclaimer')" class="hover:text-[#d4af37]">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="legal-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        <div class="bg-slate-900 border border-white/10 w-full max-w-2xl max-h-[85vh] overflow-hidden flex flex-col rounded shadow-2xl">
+            <div class="p-6 border-b border-white/5 flex justify-between items-center bg-slate-950">
+                <h3 id="modal-title" class="serif text-3xl text-[#d4af37]"></h3>
+                <button onclick="closeLegal()" class="text-white/50 hover:text-white text-4xl leading-none">&times;</button>
+            </div>
+            <div id="modal-content" class="p-10 overflow-y-auto legal-body bg-slate-900"></div>
+            <div class="p-8 border-t border-white/5 text-center bg-slate-950">
+                <button onclick="closeLegal()" class="text-[#d4af37] text-[11px] font-bold uppercase tracking-[0.2em] border border-[#d4af37]/30 px-10 py-4 hover:bg-[#d4af37] hover:text-slate-950 transition-all">Cerrar / Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => { el.classList.toggle('lang-hidden', el.getAttribute('data-lang') !== lang); });
+            document.getElementById('btn-en').style.opacity = lang === 'en' ? '1' : '0.3';
+            document.getElementById('btn-es').style.opacity = lang === 'es' ? '1' : '0.3';
+            localStorage.setItem('prefLang', lang);
+        }
+        window.onload = () => setLanguage(localStorage.getItem('prefLang') || 'en');
+
+        const legalTexts = {
+            privacy: {
+                en: { title: "Privacy Policy", content: "<h4>1. Information We Collect</h4><p>We collect information that you voluntarily provide to us through contact forms, such as your name, email address, and message[cite: 9]. We may also collect technical navigation data through cookies[cite: 10].</p><h4>2. Use of Information</h4><p>We use your data to respond to your inquiries, improve our services, and comply with legal obligations[cite: 12]. We do not sell or share your personal information with third parties for commercial purposes[cite: 13].</p><h4>3. Data Security</h4><p>At ESI Ventures LLC, we value your privacy and implement measures to protect your information[cite: 7].</p>" },
+                es: { title: "Política de Privacidad", content: "<h4>1. Información que Recopilamos</h4><p>Recopilamos información que usted nos proporciona voluntariamente a través de formularios de contacto (nombre, correo electrónico, mensaje)[cite: 9]. También podemos recopilar datos técnicos de navegación mediante cookies[cite: 10].</p><h4>2. Uso de la Información</h4><p>Utilizamos sus datos para responder a sus consultas, mejorar nuestros servicios y cumplir con obligaciones legales[cite: 12]. No vendemos ni compartimos su información personal con terceros para fines comerciales[cite: 13].</p><h4>3. Seguridad de Datos</h4><p>En ESI Ventures LLC, valoramos su privacidad y aplicamos medidas para el tratamiento de su información al visitar nuestro sitio[cite: 7].</p>" }
+            },
+            terms: {
+                en: { title: "Terms of Service", content: "<h4>1. Acceptance of Terms</h4><p>By accessing this website, you agree to comply with these terms and all applicable laws[cite: 16]. If you do not agree, you are prohibited from using the site[cite: 17].</p><h4>2. Intellectual Property</h4><p>All content (logos, texts, images of APlusLanguages, 3M Multi-Asset Portfolio, DiscoverNowBolivia) is property of ESI Ventures LLC or used under license[cite: 19]. Reproduction without prior permission is prohibited[cite: 20].</p><h4>3. Limitation of Liability</h4><p>ESI Ventures LLC shall not be liable for any damages arising from the use or inability to use the materials on this website[cite: 22].</p>" },
+                es: { title: "Términos de Servicio", content: "<h4>1. Aceptación de los Términos</h4><p>Al acceder a este sitio web, usted acepta cumplir con estos términos y todas las leyes aplicables[cite: 16]. Si no está de acuerdo, tiene prohibido utilizar el sitio[cite: 17].</p><h4>2. Propiedad Intelectual</h4><p>Todo el contenido (logos, textos, imágenes de APlusLanguages, 3M Multi-Asset Portfolio, DiscoverNowBolivia) es propiedad de ESI Ventures LLC o se utiliza bajo licencia[cite: 19]. Queda prohibida su reproducción sin permiso previo[cite: 20].</p><h4>3. Limitación de Responsabilidad</h4><p>ESI Ventures LLC no será responsable de ningún daño derivado del uso o la imposibilidad de usar los materiales en este sitio web[cite: 22].</p>" }
+            },
+            cookies: {
+                en: { title: "Cookie Policy", content: "<h4>1. Usage</h4><p>This site uses cookies to enhance your experience. Cookies are small text files stored on your browser[cite: 24].</p><h4>2. Types of Cookies</h4><p>• <b>Necessary Cookies:</b> For the basic operation of the site [cite: 25].<br>• <b>Analytics Cookies:</b> To understand how users interact with the web (Google Analytics)[cite: 26].</p><h4>3. Management</h4><p>You can set your browser to refuse all cookies, though some parts of the site may not function correctly[cite: 27].</p>" },
+                es: { title: "Política de Cookies", content: "<h4>1. Uso</h4><p>Este sitio utiliza cookies para mejorar su experiencia. Las cookies son pequeños archivos de texto que se guardan en su navegador[cite: 24].</p><h4>2. Tipos de Cookies</h4><p>• <b>Cookies Necesarias:</b> Para el funcionamiento básico del sitio [cite: 25].<br>• <b>Cookies de Análisis:</b> Para entender cómo los usuarios interactúan con la web (Google Analytics)[cite: 26].</p><h4>3. Gestión</h4><p>Usted puede configurar su navegador para rechazar todas las cookies, pero algunas partes del sitio podrían no funcionar correctamente[cite: 27].</p>" }
+            },
+            disclaimer: {
+                en: { title: "Legal Disclaimer", content: "<h4>1. Representation</h4><p>Entities and portfolios presented are conceptual examples of strategic investments. Specific assets and logos are for illustrative purposes and do not represent guaranteed outcomes.</p><h4>2. No Advice</h4><p>The content on this site is for informational purposes only and does not constitute professional financial, legal, or investment advice[cite: 4].</p>" },
+                es: { title: "Aviso Legal", content: "<h4>1. Representación</h4><p>Las entidades y carteras presentadas aquí son ejemplos conceptuales de inversiones estratégicas. Los activos y logotipos específicos son para fines ilustrativos y no representan resultados garantizados.</p><h4>2. Sin Asesoría</h4><p>El contenido de este sitio tiene únicamente fines informativos y no constituye asesoría financiera, legal o de inversión profesional[cite: 4].</p>" }
+            }
+        };
+
+        function openLegal(type) {
+            const lang = localStorage.getItem('prefLang') || 'en';
+            document.getElementById('modal-title').innerText = legalTexts[type][lang].title;
+            document.getElementById('modal-content').innerHTML = legalTexts[type][lang].content;
+            document.getElementById('legal-modal').classList.remove('hidden');
+            document.getElementById('legal-modal').classList.add('flex');
+        }
+        function closeLegal() { document.getElementById('legal-modal').classList.add('hidden'); document.getElementById('legal-modal').classList.remove('flex'); }
+    </script>
+</body>
+</html>
