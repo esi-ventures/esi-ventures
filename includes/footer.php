@@ -11,6 +11,8 @@
                 <span class="block text-[#d4af37] uppercase tracking-widest text-[12px] font-bold mb-8 lang-hidden" data-lang="es">Navegación</span>
                 
                 <div class="flex flex-col gap-5 text-[12px] uppercase tracking-widest font-semibold">
+                    <a href="#home" class="nav-link-dark" data-lang="en">Home</a>
+                    <a href="#home" class="nav-link-dark lang-hidden" data-lang="es">Inicio</a>
                     <a href="#about" class="hover:text-[#d4af37]" data-lang="en">About</a>
                     <a href="#about" class="hover:text-[#d4af37] lang-hidden" data-lang="es">Nosotros</a>
                     <a href="#philosophy" class="hover:text-[#d4af37]" data-lang="en">Philosophy</a>

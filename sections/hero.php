@@ -1,4 +1,4 @@
-   <section class="relative min-h-screen flex items-center justify-center text-center px-6">
+   <section id="home" class="relative min-h-screen flex items-center justify-center text-center px-6">
         <div class="hero-bg"></div>
         <div class="relative z-10 max-w-5xl" data-aos="fade-up" data-aos-duration="1500">
             <span class="section-title">USA, FL • Bolivia</span>

@@ -2,6 +2,8 @@
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="#"><img src="imagenes/isotipo-transp.png" alt="ESI Ventures" class="h-8 md:h-12"></a>
             <div class="hidden md:flex gap-8 text-[11px] tracking-[0.2em] uppercase font-bold">
+                <a href="#" class="nav-link-dark" data-lang="en">Home</a>
+                <a href="#" class="nav-link-dark lang-hidden" data-lang="es">Inicio</a>
                 <a href="#about" class="nav-link-dark" data-lang="en">About</a>
                 <a href="#about" class="nav-link-dark lang-hidden" data-lang="es">Nosotros</a>
                 <a href="#philosophy" class="nav-link-dark" data-lang="en">Philosophy</a>
@@ -25,6 +27,8 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 flex flex-col p-6 gap-4 text-[11px] tracking-[0.2em] uppercase font-bold shadow-xl">
+            <a href="#home" class="block py-3 nav-link-dark" data-lang="en">Home</a>
+            <a href="#home" class="block py-3 nav-link-dark lang-hidden" data-lang="es">Inicio</a>
             <a href="#about" onclick="toggleMenu()" class="nav-link-dark" data-lang="en">About</a>
             <a href="#about" onclick="toggleMenu()" class="nav-link-dark lang-hidden" data-lang="es">Nosotros</a>
             <a href="#philosophy" onclick="toggleMenu()" class="nav-link-dark" data-lang="en">Philosophy</a>
